@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+
+    <input [ngModel]='amount$ | async' (ngModelChange)="onAmountChange($event)">
+    <p *ngFor="let currency of (currencyRates$ | async)">
+        {{currency.code + ' ' + currency.value * (amount$ | async)}}
+    </p>
